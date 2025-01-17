@@ -26,7 +26,7 @@ A PHP Laravel package for Speedex SOAP API.
             // 'Pod_Amount_Description' => 'M',
             'RCV_Addr1'           => "street 52 City",
             'RCV_Country'         => 'Country',
-            'RCV_Name'            => "Bill ",
+            'RCV_Name'            => "Firstname Surname",
             'RCV_Tel1'            => "0000000000",
             'RCV_Zip_Code'        => "00000",
             'Saturday_Delivery'   => 0,
