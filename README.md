@@ -12,7 +12,6 @@ Laravel package that makes it easy to use the Speedex SOAP API.
 
 ## Usage
 
-
 ```php
         $speedex = new Speedex();
 
