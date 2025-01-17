@@ -261,7 +261,7 @@ class Speedex
     /**
      * @throws Exception
      */
-    public function CancelBOL($voucher_id)
+    public function cancel($voucher_id)
     {
 
         try {
@@ -275,8 +275,6 @@ class Speedex
 
         } catch (Exception $e) {
 
-            Log::info($e->getMessage());
-
             throw new Exception($e->getMessage());
 
         }
@@ -288,7 +286,7 @@ class Speedex
     /**
      * @throws Exception
      */
-    public function GetConsignmentsByDate($session_id, $dateFrom, $dateTo)
+    public function getVouchers( $dateFrom, $dateTo)
     {
 
         try {
@@ -296,26 +294,23 @@ class Speedex
             $Parameters = array(
                 'dateFrom'  => $dateFrom,
                 'dateTo'    => $dateTo,
-                'sessionID' => $session_id,
+                'sessionID' => $this->session_id,
             );
 
             return $this->client->GetConsignmentsByDate($Parameters);
 
         } catch (Exception $e) {
 
-            Log::info($e->getMessage());
-
             throw new Exception($e->getMessage());
 
         }
-
 
     }
 
     /**
      * @throws Exception
      */
-    public function GetTraceByVoucher($voucherID)
+    public function trace($voucherID)
     {
 
         try {

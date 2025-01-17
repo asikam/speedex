@@ -10,9 +10,24 @@ A PHP Laravel package for Speedex SOAP API.
 
         php artisan vendor:publish --provider="Asikam\Speedex\SpeedexServiceProvider"
 
-## Create a new voucher and save it as PDF
+## Available Features
+
+- Create Voucher
+- Cancel Voucher
+- Get Voucher 
+- Get Voucher delivery Status (Trace)
+- Get vouchers by date (GetConsignmentsByDate)
+
+
+## Usage
+
+- Create Voucher 
+
+Creating a new voucher and save it as PDF
 
 ```php
+        use Asikam\Speedex\Speedex;
+        
         $speedex = new Speedex();
 
         $voucher['BOL'][] = [
@@ -48,3 +63,26 @@ A PHP Laravel package for Speedex SOAP API.
         }
 
 ```
+
+- Cancel Voucher 
+
+
+```php
+    use Asikam\Speedex\Speedex;
+    
+    $speedex = new Speedex();
+
+    $response = $speedex->cancel("voucher number");
+```
+
+- Trace Voucher 
+
+```php
+    use Asikam\Speedex\Speedex;
+
+    $speedex = new Speedex();
+    
+    $response = $speedex->trace("voucher number");
+
+```
+
