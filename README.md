@@ -10,7 +10,7 @@ A PHP Laravel package for Speedex SOAP API.
 
         php artisan vendor:publish --provider="Asikam\Speedex\SpeedexServiceProvider"
 
-## Usage
+## Create a new voucher and save it as PDF
 
 ```php
         $speedex = new Speedex();

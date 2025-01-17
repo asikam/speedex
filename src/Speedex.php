@@ -77,6 +77,11 @@ class Speedex
     public ?string $environment;
 
     /**
+     * @var mixed
+     */
+    public mixed $created ;
+
+    /**
      * @throws SoapFault
      * @throws Exception
      */
@@ -204,10 +209,6 @@ class Speedex
 
     }
 
-    /**
-     * @var mixed
-     */
-    public mixed $created ;
 
     /**
      * @throws Exception
