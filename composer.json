@@ -1,0 +1,20 @@
+{
+    "name": "asikam/speedex",
+    "description": "Laravel PHP package for speedex courier API",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Asikam\\Speedex\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aggelossik",
+            "email": "a.sykamiotis@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-soap": "*"
+    }
+}
