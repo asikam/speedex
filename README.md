@@ -1,6 +1,6 @@
-## Speedex courier PHP API Laravel package
+## Speedex courier Laravel package for SOAP API
 
-Laravel package that makes it easy to use the Speedex SOAP API.
+A PHP Laravel package for Speedex SOAP API.
    
 ## Installation
 
