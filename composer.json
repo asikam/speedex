@@ -16,5 +16,15 @@
     "require": {
         "php": "^8.2",
         "ext-soap": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Asikam\\Speedex\\SpeedexServiceProvider"
+            ],
+            "aliases": {
+                "Speedex": "Asikam\\Speedex\\Facade"
+            }
+        }
     }
 }
