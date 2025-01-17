@@ -1,7 +1,6 @@
 <?php
 
 namespace Asikam\Speedex;
-
 use Illuminate\Support\ServiceProvider;
 
 class SpeedexServiceProvider extends ServiceProvider
