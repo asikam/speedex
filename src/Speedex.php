@@ -88,6 +88,38 @@ class Speedex
     public function __construct()
     {
         $this->setEnv();
+    }
+
+    /**
+     * @throws SoapFault
+     * @throws Exception
+     */
+    public function setEnv($environment = null ): void
+    {
+        $this->environment = $environment ?? App::environment();
+
+        switch ($this->environment) {
+            case 'local':
+                $this->wsdlUrl      = config('speedex.SPEEDEX_DEV_URL');
+                $this->name         = config('speedex.SPEEDEX_DEV_NAME');
+                $this->username     = config('speedex.SPEEDEX_DEV_USERNAME');
+                $this->password     = config('speedex.SPEEDEX_DEV_PASSWORD');
+                $this->customer_id  = config('speedex.SPEEDEX_DEV_SND_CUSTOMER_ID');
+                $this->agreement_id = config('speedex.SPEEDEX_DEV_SND_AGREEMENT_ID');
+
+                break;
+            default:
+
+                $this->wsdlUrl      = config('speedex.SPEEDEX_URL');
+                $this->name         = config('speedex.SPEEDEX_NAME');
+                $this->username     = config('speedex.SPEEDEX_USERNAME');
+                $this->password     = config('speedex.SPEEDEX_PASSWORD');
+                $this->customer_id  = config('speedex.SPEEDEX_SND_CUSTOMER_ID');
+                $this->agreement_id = config('speedex.SPEEDEX_SND_AGREEMENT_ID');
+
+                break;
+        }
+
         $this->setOptions();
         $this->session_id();
 
@@ -98,30 +130,6 @@ class Speedex
         $this->username    = null;
         $this->password    = null;
         $this->parameters  = [];
-    }
-
-    public function setEnv( $environment = null ): void
-    {
-        $this->environment = $environment ?? App::environment();
-
-        if ( $this?->environment == 'local' ) {
-
-            $this->wsdlUrl      = config('speedex.SPEEDEX_DEV_URL');
-            $this->name         = config('speedex.SPEEDEX_DEV_NAME');
-            $this->username     = config('speedex.SPEEDEX_DEV_USERNAME');
-            $this->password     = config('speedex.SPEEDEX_DEV_PASSWORD');
-            $this->customer_id  = config('speedex.SPEEDEX_DEV_SND_CUSTOMER_ID');
-            $this->agreement_id = config('speedex.SPEEDEX_DEV_SND_AGREEMENT_ID');
-
-            return ;
-        }
-
-        $this->wsdlUrl      = config('speedex.SPEEDEX_URL');
-        $this->name         = config('speedex.SPEEDEX_NAME');
-        $this->username     = config('speedex.SPEEDEX_USERNAME');
-        $this->password     = config('speedex.SPEEDEX_PASSWORD');
-        $this->customer_id  = config('speedex.SPEEDEX_SND_CUSTOMER_ID');
-        $this->agreement_id = config('speedex.SPEEDEX_SND_AGREEMENT_ID');
 
     }
 
