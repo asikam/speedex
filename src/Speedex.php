@@ -102,9 +102,9 @@ class Speedex
 
     public function setEnv( $environment = null ): void
     {
-        $this->environment = $environment;
+        $this->environment = $environment ?? App::environment();
 
-        if (App::environment('local') || $this?->environment == 'local' ) {
+        if ( $this?->environment == 'local' ) {
 
             $this->wsdlUrl      = config('speedex.SPEEDEX_DEV_URL');
             $this->name         = config('speedex.SPEEDEX_DEV_NAME');
